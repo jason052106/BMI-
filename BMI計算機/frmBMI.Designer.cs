@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBMI));
             this.grpinput = new System.Windows.Forms.GroupBox();
             this.btnRUN = new System.Windows.Forms.Button();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -39,20 +40,24 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.lblBMI = new System.Windows.Forms.Label();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.picResult = new System.Windows.Forms.PictureBox();
             this.grpinput.SuspendLayout();
             this.grpOutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             this.SuspendLayout();
             // 
             // grpinput
             // 
+            this.grpinput.Controls.Add(this.btnClear);
             this.grpinput.Controls.Add(this.btnRUN);
             this.grpinput.Controls.Add(this.txtWeight);
             this.grpinput.Controls.Add(this.txtHeight);
             this.grpinput.Controls.Add(this.lblWeight);
             this.grpinput.Controls.Add(this.lblHeight);
-            this.grpinput.Location = new System.Drawing.Point(151, 105);
+            this.grpinput.Location = new System.Drawing.Point(12, 12);
             this.grpinput.Name = "grpinput";
-            this.grpinput.Size = new System.Drawing.Size(295, 100);
+            this.grpinput.Size = new System.Drawing.Size(449, 127);
             this.grpinput.TabIndex = 0;
             this.grpinput.TabStop = false;
             this.grpinput.Text = "輸入";
@@ -62,7 +67,7 @@
             this.btnRUN.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRUN.Location = new System.Drawing.Point(214, 21);
             this.btnRUN.Name = "btnRUN";
-            this.btnRUN.Size = new System.Drawing.Size(75, 70);
+            this.btnRUN.Size = new System.Drawing.Size(75, 25);
             this.btnRUN.TabIndex = 4;
             this.btnRUN.Text = "計算";
             this.btnRUN.UseVisualStyleBackColor = true;
@@ -75,6 +80,7 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(100, 22);
             this.txtWeight.TabIndex = 3;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             // 
             // txtHeight
             // 
@@ -83,6 +89,7 @@
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(100, 22);
             this.txtHeight.TabIndex = 2;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             // 
             // lblWeight
             // 
@@ -110,9 +117,9 @@
             // 
             this.grpOutput.Controls.Add(this.lblResult);
             this.grpOutput.Controls.Add(this.lblBMI);
-            this.grpOutput.Location = new System.Drawing.Point(151, 226);
+            this.grpOutput.Location = new System.Drawing.Point(12, 133);
             this.grpOutput.Name = "grpOutput";
-            this.grpOutput.Size = new System.Drawing.Size(295, 74);
+            this.grpOutput.Size = new System.Drawing.Size(449, 86);
             this.grpOutput.TabIndex = 1;
             this.grpOutput.TabStop = false;
             this.grpOutput.Text = "計算結果";
@@ -138,13 +145,36 @@
             this.lblBMI.TabIndex = 0;
             this.lblBMI.Text = "身體質量指數(BMI)";
             // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnClear.Location = new System.Drawing.Point(214, 67);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 25);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "清除";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // picResult
+            // 
+            this.picResult.Image = ((System.Drawing.Image)(resources.GetObject("picResult.Image")));
+            this.picResult.Location = new System.Drawing.Point(487, 21);
+            this.picResult.Name = "picResult";
+            this.picResult.Size = new System.Drawing.Size(272, 198);
+            this.picResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picResult.TabIndex = 2;
+            this.picResult.TabStop = false;
+            // 
             // frmBMI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 664);
+            this.ClientSize = new System.Drawing.Size(780, 245);
+            this.Controls.Add(this.picResult);
             this.Controls.Add(this.grpOutput);
             this.Controls.Add(this.grpinput);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmBMI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI計算機";
@@ -152,6 +182,7 @@
             this.grpinput.PerformLayout();
             this.grpOutput.ResumeLayout(false);
             this.grpOutput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,6 +200,8 @@
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Label lblBMI;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.PictureBox picResult;
     }
 }
 
