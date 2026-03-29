@@ -97,9 +97,7 @@ namespace BMI計算機
             lblResult.Text = $"{bmi:F2} ({strResult})";
             lblResult.BackColor = colorResult;
 
-            MessageBox.Show("BMI 計算完成！", "計算成功",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)

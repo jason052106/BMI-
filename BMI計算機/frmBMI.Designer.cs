@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBMI));
             this.grpinput = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnRUN = new System.Windows.Forms.Button();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtHeight = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.lblBMI = new System.Windows.Forms.Label();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.btnClear = new System.Windows.Forms.Button();
             this.picResult = new System.Windows.Forms.PictureBox();
             this.grpinput.SuspendLayout();
             this.grpOutput.SuspendLayout();
@@ -61,6 +61,17 @@
             this.grpinput.TabIndex = 0;
             this.grpinput.TabStop = false;
             this.grpinput.Text = "輸入";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnClear.Location = new System.Drawing.Point(214, 67);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 25);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "清除";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRUN
             // 
@@ -145,17 +156,6 @@
             this.lblBMI.TabIndex = 0;
             this.lblBMI.Text = "身體質量指數(BMI)";
             // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnClear.Location = new System.Drawing.Point(214, 67);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 25);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "清除";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // picResult
             // 
             this.picResult.Image = ((System.Drawing.Image)(resources.GetObject("picResult.Image")));
@@ -168,8 +168,10 @@
             // 
             // frmBMI
             // 
+            this.AcceptButton = this.btnRUN;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(780, 245);
             this.Controls.Add(this.picResult);
             this.Controls.Add(this.grpOutput);
