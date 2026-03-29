@@ -14,6 +14,8 @@
 
 5.提供「清除」按鈕，方便使用者快速清空數據重新輸入。
 
+6.更便利的操作模式，按下ENTER直接顯示結果，按下ESC一鍵清除
+
 <img width="768" height="272" alt="螢幕擷取畫面 2026-03-28 203825" src="https://github.com/user-attachments/assets/2491fe85-081e-42f9-9886-1e2a5f912108" />
 <img width="776" height="276" alt="螢幕擷取畫面 2026-03-28 203843" src="https://github.com/user-attachments/assets/efac90c5-67a9-46f9-ad0b-11455cc1d867" />
 <img width="781" height="276" alt="螢幕擷取畫面 2026-03-28 203903" src="https://github.com/user-attachments/assets/264c6895-f250-41eb-a391-4c50a0afbd2f" />
